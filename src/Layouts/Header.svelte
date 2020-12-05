@@ -9,12 +9,14 @@
 
 <header class:sticky style="background:{background};color:{color};">
   <nav>
-    <Logo width="150px" />
+    <Logo
+      width="150px"
+      logo="<img src='https://myfunscience.com/wp-content/uploads/MyFunScience-logo-small.png' width='100%' />" />
     <ul class:uppercase>
       <li><a style="color:{linkColor};" href="/">Home</a></li>
-      <li><a style="color:{linkColor};" href="/">About</a></li>
-      <li><a style="color:{linkColor};" href="/">Services</a></li>
-      <li><a style="color:{linkColor};" href="/">Contact</a></li>
+      <li><a style="color:{linkColor};" href="/">STEAM Club</a></li>
+      <li><a style="color:{linkColor};" href="/">Art Class</a></li>
+      <li><a style="color:{linkColor};" href="/">Web Development</a></li>
     </ul>
   </nav>
 </header>
@@ -22,7 +24,7 @@
 <style>
   header {
     /* width: 100%; */
-    padding: 1em;
+    padding: 1em 0;
     background: darkorange;
     color: white;
     text-align: center;
@@ -45,7 +47,7 @@
   }
   nav ul li {
     list-style-type: none;
-    padding: 0 1rem;
+    padding: 0 1em;
     font-weight: 600;
   }
   nav ul li a {
@@ -55,9 +57,14 @@
   }
   nav ul li a:hover {
     padding-bottom: 1em;
-    border-bottom: 4px solid white;
+    border-bottom: 4px solid #fdc735;
   }
   .uppercase {
     text-transform: uppercase;
+  }
+  @media screen and (max-width: 600px) {
+    nav ul {
+      display: none;
+    }
   }
 </style>

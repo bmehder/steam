@@ -2,6 +2,8 @@
   import { scale } from "svelte/transition";
   import Section from "./Layouts/Section.svelte";
   import Grid from "./Layouts/Grid.svelte";
+  import Header from "./Layouts/Header.svelte";
+  // import Footer from "./Layouts/Footer.svelte";
 
   // Create an empty array for the posts
   let posts = [];
@@ -44,40 +46,53 @@
   // $: posts.length !== 0 ? console.log(posts) : undefined;
 </script>
 
-<Section padding="2em" title="STEAM Club" titleColor="white">
-  <!-- Asynchronously get the posts by invoking the "promise" variable -->
-  {#await promise then posts}
-    <!-- <p>...waiting</p> -->
+<div class="wrapper">
+  <Header background="white" linkColor="#333" />
 
-    <!-- Once the Promise is resolved (successfully)... -->
-    <!-- {:then} -->
-    {#if !isModalOpen}
-      <Grid columns="1fr 1fr 1fr" gap="2em">
-        <!-- 	Loop through each post... -->
-        {#each posts as post, i}
-          <!-- 		Use the featured image property of the current object as the src attribute -->
-          <a href="/"><img
-              in:scale
-              on:click|preventDefault={(e) => updatePostIndex(i)}
-              src={post.featured_image}
-              alt="gallery-item" /></a>
-        {/each}
-      </Grid>
-    {:else}
-      <div transition:scale class="modal" on:click={closeModal}>
-        <img src={posts[postIndex].featured_image} alt="single item" />
-      </div>
-    {/if}
-    <!-- ...Or, if the Promise is rejected, handle the error -->
-  {:catch error}
-    <p>Something has gone horribly wrong. :-(</p>
-    <p style="color: red">{error.message}</p>
+  <Section padding="2em" title="STEAM Club" titleColor="white">
+    <!-- Asynchronously get the posts by invoking the "promise" variable -->
+    {#await promise then posts}
+      <!-- <p>...waiting</p> -->
 
-    <!-- End Async request -->
-  {/await}
-</Section>
+      <!-- Once the Promise is resolved (successfully)... -->
+      <!-- {:then} -->
+      {#if !isModalOpen}
+        <Grid columns="1fr 1fr 1fr" gap="2em">
+          <!-- 	Loop through each post... -->
+          {#each posts as post, i}
+            <!-- 		Use the featured image property of the current object as the src attribute -->
+            <a href="/"><img
+                in:scale
+                on:click|preventDefault={(e) => updatePostIndex(i)}
+                src={post.featured_image}
+                alt="gallery-item" /></a>
+          {/each}
+        </Grid>
+      {:else}
+        <div transition:scale class="modal" on:click={closeModal}>
+          <img src={posts[postIndex].featured_image} alt="single item" />
+        </div>
+      {/if}
+      <!-- ...Or, if the Promise is rejected, handle the error -->
+    {:catch error}
+      <p>Something has gone horribly wrong. :-(</p>
+      <p style="color: red">{error.message}</p>
+
+      <!-- End Async request -->
+    {/await}
+  </Section>
+
+  <!-- <Footer background="#202020" color="#fdc735">
+    © Copyright 2021 MyFunHomeschool, LLC. All Rights Reserved.
+  </Footer> -->
+</div>
 
 <style>
+  .wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+  }
   img {
     display: block;
     margin: 1em auto;

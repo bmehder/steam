@@ -4,7 +4,10 @@
   export let width = "200px";
 </script>
 
-<a style="width:{width};" id="logo" href="/">{@html logo}</a>
+<a
+  style="width:{width};"
+  id="logo"
+  href="https://myfunscience.com/">{@html logo}</a>
 
 <style>
   #logo {
@@ -14,5 +17,11 @@
     color: white;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-decoration: none;
+  }
+  @media screen and (max-width: 600px) {
+    #logo {
+      display: block;
+      margin: auto;
+    }
   }
 </style>
