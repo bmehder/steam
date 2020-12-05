@@ -28,7 +28,7 @@
   aside div {
     max-width: 960px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem 0;
     font-size: 4rem;
     line-height: 1.2em;
     font-weight: 700;

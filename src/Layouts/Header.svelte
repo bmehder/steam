@@ -1,10 +1,13 @@
 <script>
+  import { createEventDispatcher } from "svelte";
   import Logo from "../UI/Logo.svelte";
   export let sticky = false;
   export let uppercase = false;
   export let background = "darkorange";
   export let color = "white";
   export let linkColor = "white";
+
+  const dispatch = createEventDispatcher();
 </script>
 
 <header class:sticky style="background:{background};color:{color};">
@@ -14,9 +17,24 @@
       logo="<img src='https://myfunscience.com/wp-content/uploads/MyFunScience-logo-small.png' width='100%' />" />
     <ul class:uppercase>
       <!-- <li><a style="color:{linkColor};" href="/">Home</a></li> -->
-      <li><a style="color:{linkColor};" href="/">STEAM Club</a></li>
-      <li><a style="color:{linkColor};" href="/">Art Class</a></li>
-      <li><a style="color:{linkColor};" href="/">Web Development</a></li>
+      <li>
+        <a
+          on:click|preventDefault={() => dispatch('pagenav', 'steam')}
+          style="color:{linkColor};"
+          href="/">STEAM Club</a>
+      </li>
+      <li>
+        <a
+          on:click|preventDefault={() => dispatch('pagenav', 'art')}
+          style="color:{linkColor};"
+          href="/">Art Class</a>
+      </li>
+      <li>
+        <a
+          on:click|preventDefault={() => dispatch('pagenav', 'webdev')}
+          style="color:{linkColor};"
+          href="/">Web Development</a>
+      </li>
     </ul>
   </nav>
 </header>

@@ -28,6 +28,10 @@ a:visited {
   color: rgb(0, 80, 160);
 }
 
+nav a:hover {
+  color: #307ad5 !important;
+}
+
 label {
   display: block;
 }

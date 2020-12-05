@@ -2,11 +2,13 @@
   import { scale } from "svelte/transition";
   import Grid from "../Layouts/Grid.svelte";
 
+  // The endpoint we want to send a GET request to
   export let source;
 
   // Create an empty array for the posts
   let posts = [];
 
+  // Dynamically console the current post object
   $: posts.length !== 0 ? console.log(posts[postIndex]) : undefined;
 
   // Is the modal open?
@@ -22,6 +24,7 @@
     const data = await res.json();
     // If all is well with the data, put it in the array, and return it.
     if (res.ok) {
+      // Put the fetched data in the local posts array variable
       posts = [...data.posts];
       return posts; // An array of objects representing posts
     } else {
@@ -32,12 +35,15 @@
   // Keep track of the index of the post that was clicked on.
   let postIndex = 0;
 
+  // Update the track index with the index from the each loop.
   const updatePostIndex = (index) => {
     postIndex = index;
     isModalOpen = true;
+    window.scrollTo(0, 0);
     // console.log(postIndex);
   };
 
+  // Close the modal
   const closeModal = () => {
     isModalOpen = false;
   };
@@ -53,7 +59,7 @@
     <Grid columns="1fr 1fr 1fr" gap="2em">
       <!-- 	Loop through each post... -->
       {#each posts as post, i}
-        <!-- 		Use the featured image property of the current object as the src attribute -->
+        <!-- 	Use the featured image property of the current object as the src attribute -->
         <a href="/"><img
             in:scale
             on:click|preventDefault={(e) => updatePostIndex(i)}
@@ -62,7 +68,10 @@
       {/each}
     </Grid>
   {:else}
+    <!-- Show the modal when isModalOpen is true -->
     <div transition:scale class="modal" on:click={closeModal}>
+      <!-- Use the featured image property of the
+           current post object for the src attr. -->
       <img src={posts[postIndex].featured_image} alt="single item" />
     </div>
   {/if}
