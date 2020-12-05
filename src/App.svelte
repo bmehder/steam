@@ -14,7 +14,7 @@
 
 <Hero
   title="Student Galleries"
-  background="https://source.unsplash.com/random/"
+  background="https://myfunscience.com/wp-content/uploads/plant-bg3.jpg"
   height="200px"
   color="white" />
 
@@ -36,11 +36,11 @@
   </Section>
 {/if}
 
-{#if page === 'webdev'}
+<!-- {#if page === 'webdev'}
   <Section background="#202020" padding="2em" titleColor="#fdc735" align="left">
     <Gallery
       source="https://public-api.wordpress.com/rest/v1.1/sites/repo995752852.wordpress.com/posts/?category=web-development"
       title="Web Development"
       color="#fdc735" />
   </Section>
-{/if}
+{/if} -->

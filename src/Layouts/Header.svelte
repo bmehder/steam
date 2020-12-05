@@ -29,12 +29,12 @@
           style="color:{linkColor};"
           href="/">Art Class</a>
       </li>
-      <li>
+      <!-- <li>
         <a
           on:click|preventDefault={() => dispatch('pagenav', 'webdev')}
           style="color:{linkColor};"
           href="/">Web Development</a>
-      </li>
+      </li> -->
     </ul>
   </nav>
 </header>
