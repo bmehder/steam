@@ -43,7 +43,7 @@
     isModalOpen = false;
   };
 
-  // $: posts.length !== 0 ? console.log(posts) : undefined;
+  $: posts.length !== 0 ? console.log(posts[postIndex]) : undefined;
 </script>
 
 <div class="wrapper">
