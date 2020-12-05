@@ -106,6 +106,7 @@
 
   @media screen and (max-width: 600px) {
     img {
+      width: 90% !important;
       margin: 2em auto;
     }
   }
