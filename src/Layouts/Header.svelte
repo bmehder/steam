@@ -13,7 +13,7 @@
       width="150px"
       logo="<img src='https://myfunscience.com/wp-content/uploads/MyFunScience-logo-small.png' width='100%' />" />
     <ul class:uppercase>
-      <li><a style="color:{linkColor};" href="/">Home</a></li>
+      <!-- <li><a style="color:{linkColor};" href="/">Home</a></li> -->
       <li><a style="color:{linkColor};" href="/">STEAM Club</a></li>
       <li><a style="color:{linkColor};" href="/">Art Class</a></li>
       <li><a style="color:{linkColor};" href="/">Web Development</a></li>
