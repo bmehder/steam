@@ -16,35 +16,31 @@
   title="Student Galleries"
   background="https://source.unsplash.com/random/"
   height="200px"
-  color="#fdc735" />
+  color="white" />
 
 {#if page === 'steam'}
-  <Section padding="2em" title="STEAM Club" titleColor="white" align="left">
+  <Section background="#307ad5" padding="2em" titleColor="white" align="left">
     <Gallery
-      source="https://public-api.wordpress.com/rest/v1.1/sites/repo995752852.wordpress.com/posts/" />
+      source="https://public-api.wordpress.com/rest/v1.1/sites/repo995752852.wordpress.com/posts/"
+      title="STEAM Club"
+      color="#fdc735" />
   </Section>
 {/if}
 
 {#if page === 'art'}
-  <Section
-    background="white"
-    padding="2em"
-    title="Art Class"
-    titleColor="#307ad5"
-    align="left">
+  <Section background="white" padding="2em" titleColor="#307ad5" align="left">
     <Gallery
-      source="https://public-api.wordpress.com/rest/v1.1/sites/repo995752852.wordpress.com/posts/" />
+      source="https://public-api.wordpress.com/rest/v1.1/sites/repo995752852.wordpress.com/posts/"
+      title="Art Class"
+      color="#307ad5" />
   </Section>
 {/if}
 
 {#if page === 'webdev'}
-  <Section
-    background="#202020"
-    padding="2em"
-    title="Web Development"
-    titleColor="white"
-    align="left">
+  <Section background="#202020" padding="2em" titleColor="#fdc735" align="left">
     <Gallery
-      source="https://public-api.wordpress.com/rest/v1.1/sites/repo995752852.wordpress.com/posts/" />
+      source="https://public-api.wordpress.com/rest/v1.1/sites/repo995752852.wordpress.com/posts/"
+      title="Web Development"
+      color="#fdc735" />
   </Section>
 {/if}

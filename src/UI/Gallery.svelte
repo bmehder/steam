@@ -5,6 +5,10 @@
   // The endpoint we want to send a GET request to
   export let source;
 
+  // The Heading and color for the Gallery
+  export let title;
+  export let color;
+
   // Create an empty array for the posts
   let posts = [];
 
@@ -56,6 +60,9 @@
   <!-- Once the Promise is resolved (successfully)... -->
   <!-- {:then} -->
   {#if !isModalOpen}
+    {#if title}
+      <h3 style="color:{color};">{title}</h3>
+    {/if}
     <Grid columns="1fr 1fr 1fr" gap="2em">
       <!-- 	Loop through each post... -->
       {#each posts as post, i}
@@ -84,6 +91,9 @@
 {/await}
 
 <style>
+  h3 {
+    font-size: 2em;
+  }
   img {
     display: block;
     margin: 1em auto;
