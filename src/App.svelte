@@ -21,7 +21,7 @@
 {#if page === 'steam'}
   <Section background="#307ad5" padding="2em" titleColor="white" align="left">
     <Gallery
-      source="https://public-api.wordpress.com/rest/v1.1/sites/repo995752852.wordpress.com/posts/"
+      source="https://public-api.wordpress.com/rest/v1.1/sites/repo995752852.wordpress.com/posts/?category=steam"
       title="STEAM Club"
       color="#fdc735" />
   </Section>
@@ -30,7 +30,7 @@
 {#if page === 'art'}
   <Section background="white" padding="2em" titleColor="#307ad5" align="left">
     <Gallery
-      source="https://public-api.wordpress.com/rest/v1.1/sites/repo995752852.wordpress.com/posts/"
+      source="https://public-api.wordpress.com/rest/v1.1/sites/repo995752852.wordpress.com/posts/?category=art-class"
       title="Art Class"
       color="#307ad5" />
   </Section>
@@ -39,7 +39,7 @@
 {#if page === 'webdev'}
   <Section background="#202020" padding="2em" titleColor="#fdc735" align="left">
     <Gallery
-      source="https://public-api.wordpress.com/rest/v1.1/sites/repo995752852.wordpress.com/posts/"
+      source="https://public-api.wordpress.com/rest/v1.1/sites/repo995752852.wordpress.com/posts/?category=web-development"
       title="Web Development"
       color="#fdc735" />
   </Section>

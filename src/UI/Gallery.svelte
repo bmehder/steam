@@ -114,6 +114,7 @@
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
   }
   .modal img {
     width: auto;
