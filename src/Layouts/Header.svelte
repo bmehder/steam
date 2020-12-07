@@ -81,8 +81,8 @@
     text-transform: uppercase;
   }
   @media screen and (max-width: 600px) {
-    nav ul {
-      display: none;
+    nav ul li {
+      padding: 0 0.5em;
     }
   }
 </style>

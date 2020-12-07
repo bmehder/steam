@@ -21,9 +21,6 @@
 </section>
 
 <style>
-  section {
-    min-height: 100vh;
-  }
   .boxed {
     max-width: 960px;
     margin: auto;
@@ -39,6 +36,9 @@
     text-align: center;
   }
   @media screen and (max-width: 600px) {
+    section {
+      padding: 2em 0;
+    }
     h3 {
       font-size: 1.5em;
     }

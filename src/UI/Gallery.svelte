@@ -67,9 +67,8 @@
       <!-- 	Loop through each post... -->
       {#each posts as post, i}
         <!-- 	Use the featured image property of the current object as the src attribute -->
-        <a href="/"><img
+        <a on:click|preventDefault={(e) => updatePostIndex(i)} href="/"><img
             in:scale
-            on:click|preventDefault={(e) => updatePostIndex(i)}
             src={post.featured_image}
             alt="gallery-item" /></a>
       {/each}
@@ -77,9 +76,16 @@
   {:else}
     <!-- Show the modal when isModalOpen is true -->
     <div transition:scale class="modal" on:click={closeModal}>
-      <!-- Use the featured image property of the
+      <div>
+        <!-- Use the featured image property of the
            current post object for the src attr. -->
-      <img src={posts[postIndex].featured_image} alt="single item" />
+        <img src={posts[postIndex].featured_image} alt="single item" />
+        {#if posts[postIndex].excerpt}
+          <p>
+            {@html posts[postIndex].excerpt}
+          </p>
+        {/if}
+      </div>
     </div>
   {/if}
   <!-- ...Or, if the Promise is rejected, handle the error -->
@@ -91,12 +97,15 @@
 {/await}
 
 <style>
+  * {
+    box-sizing: border-box;
+  }
   h3 {
     font-size: 2em;
   }
   img {
     display: block;
-    margin: 1em auto;
+    margin: 1em 0;
     width: 250px;
     height: 250px;
     object-fit: cover;
@@ -112,19 +121,40 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
     cursor: pointer;
   }
+  .modal div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+  }
   .modal img {
     width: auto;
-    height: 80%;
+    height: 100%;
+  }
+  .modal p {
+    height: 100%;
+    width: 250px;
+    padding: 0 2em;
+    background: white;
+    border: 1px solid #eaeaea;
+    line-height: 1.5em;
   }
 
   @media screen and (max-width: 600px) {
     img {
       width: 90% !important;
       margin: 2em auto;
+    }
+    .modal div {
+      flex-direction: column;
+      justify-content: start;
+    }
+    .modal p {
+      width: 100%;
     }
   }
 </style>
